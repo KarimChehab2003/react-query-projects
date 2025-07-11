@@ -1,10 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
-import { FaExternalLinkAlt, FaEye, FaStar, FaUsers } from "react-icons/fa";
+import { FaExternalLinkAlt, FaUsers } from "react-icons/fa";
 import { FaLocationDot, FaSquarePollVertical } from "react-icons/fa6";
 import { HiUsers } from "react-icons/hi";
 import { MdErrorOutline } from "react-icons/md";
 import type { User, Repo } from "../types/GitHubUserExplorerTypes";
+import RepoCard from "../components/RepoCard";
 
 
 function GithubUserExplorer() {
@@ -60,7 +61,7 @@ function GithubUserExplorer() {
     })
 
     return (
-        <main className="min-h-screen flex flex-col items-center bg-[#F5F7FA] text-[#353535] p-4 lg:p-16 ">
+        <section className="min-h-screen flex flex-col items-center bg-[#F5F7FA] text-[#353535] p-4 lg:p-16 ">
             <div className="max-w-7xl w-full space-y-8">
                 <div className="text-center space-y-2">
                     <h1 className="text-4xl font-bold text-[#264653]">GitHub User Explorer</h1>
@@ -148,30 +149,7 @@ function GithubUserExplorer() {
                                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                                         {
                                             fetchedUserRepos.data.map((repo) => (
-                                                <article className="bg-white p-6 shadow-md rounded-lg space-y-2 flex flex-col justify-between" key={repo.id}>
-                                                    <section className="flex flex-col space-y-2">
-                                                        <a className="text-2xl font-semibold text-[#264653] hover:text-[#2A9D8F] transition-colors duration-200" href={repo.html_url} target="_blank">{repo.name}</a>
-                                                        <p className="mb-4">{repo.description || "No Description Available"}</p>
-                                                    </section>
-                                                    <section className="space-y-2">
-                                                        <div className="flex justify-between items-center">
-                                                            <div className="flex items-center space-x-2">
-                                                                <p className="flex items-center">
-                                                                    <FaEye className="me-2" /> {repo.watchers_count}
-                                                                </p>
-                                                                <p className="flex items-center">
-                                                                    <FaStar className="me-2" /> {repo.stargazers_count}
-                                                                </p>
-                                                            </div>
-                                                            <p>Updated {new Date(repo.updated_at).toLocaleDateString()}</p>
-                                                        </div>
-                                                        <hr />
-                                                        {repo.language && <div className="flex items-center space-x-2">
-                                                            <div className="h-3 w-3 bg-[#2A9D8F] rounded-full"></div>
-                                                            <p>{repo.language}</p>
-                                                        </div>}
-                                                    </section>
-                                                </article>
+                                               <RepoCard key={repo.id} {...repo} />
                                             ))
                                         }
                                     </div>
@@ -182,7 +160,7 @@ function GithubUserExplorer() {
                 )}
 
             </div>
-        </main>
+        </section>
     );
 }
 
