@@ -12,6 +12,9 @@ function Layout() {
                     <NavLink to={"/post-viewer"} className={({isActive})=> isActive 
                         ? "block px-4 py-2 bg-[#2A9D8F] rounded transition-colors duration-200"
                         : "block px-4 py-2 hover:bg-[#2A9D8F]/60 rounded"}>Paginated Posts Viewer</NavLink>
+                    <NavLink to={"/todo-list"} className={({isActive})=> isActive 
+                        ? "block px-4 py-2 bg-[#2A9D8F] rounded transition-colors duration-200"
+                        : "block px-4 py-2 hover:bg-[#2A9D8F]/60 rounded"}>TodoList w/ Add & Delete</NavLink>
                 </nav>
             </aside>
 
