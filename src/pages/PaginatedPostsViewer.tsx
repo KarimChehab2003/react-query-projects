@@ -8,11 +8,11 @@ interface Post {
 }
 
 function PaginatedPostsViewer() {
-    const [page,setPage] = useState<number>(1);
+    const [page, setPage] = useState<number>(1);
 
     const getPosts = async () => {
         try {
-            const response = await fetch(`https://jsonplaceholder.typicode.com/posts?_page=${page}&_limit=5`);
+            const response = await fetch(`https://jsonplaceholder.typicode.com/posts?_page=${page}&_limit=5`)
             const data: Post[] = await response.json()
             return data;
         } catch (e) {
@@ -20,15 +20,15 @@ function PaginatedPostsViewer() {
         }
     }
 
-    const {data, error, isLoading, isError} = useQuery({
-        queryKey: ["posts",page],
+    const { data, error, isLoading, isError } = useQuery({
+        queryKey: ["posts", page],
         queryFn: getPosts,
         placeholderData: keepPreviousData
 
     })
 
-    if(isLoading) return <div className="animate-spin rounded-full h-6 w-6 border-4 border-purple-500 border-t-transparent"></div>
-    if(isError) return <div>An error occurred... {error.message}</div>
+    if (isLoading) return <div className="animate-spin rounded-full h-6 w-6 border-4 border-purple-500 border-t-transparent"></div>
+    if (isError) return <div>An error occurred... {error.message}</div>
 
     return (
         <section className="min-h-screen flex justify-center items-center bg-gradient-to-r from-purple-50 to-blue-100 p-16">
@@ -41,7 +41,7 @@ function PaginatedPostsViewer() {
                     <div className="grid grid-cols-1 h-[60vh] overflow-auto">
                         {
                             data && (
-                                data.map((post)=>(
+                                data.map((post) => (
                                     <article key={post.id} className="p-4 border-b border-b-gray-300">
                                         <h2 className="text-2xl font-semibold text-gray-800">{post.title}</h2>
                                         <p className="text-gray-700">{post.body}</p>
@@ -52,9 +52,9 @@ function PaginatedPostsViewer() {
                         }
                     </div>
                     <div className="flex justify-between items-center w-full">
-                        <button className="px-3 py-1.5 bg-purple-600 hover:bg-purple-700 transition-colors duration-200 text-white rounded cursor-pointer font-medium" onClick={()=>setPage((page)=>page-1)} disabled={page ===1}>Previous</button>
+                        <button className="px-3 py-1.5 bg-purple-600 hover:bg-purple-700 transition-colors duration-200 text-white rounded cursor-pointer font-medium" onClick={() => setPage((page) => page - 1)} disabled={page === 1}>Previous</button>
                         <p>Page {page} of 20</p>
-                        <button className="px-3 py-1.5 bg-purple-600 hover:bg-purple-700 transition-colors duration-200 text-white rounded cursor-pointer font-medium" onClick={()=>setPage((page)=>page+1)} disabled={page ===20}>Next</button>
+                        <button className="px-3 py-1.5 bg-purple-600 hover:bg-purple-700 transition-colors duration-200 text-white rounded cursor-pointer font-medium" onClick={() => setPage((page) => page + 1)} disabled={page === 20}>Next</button>
                     </div>
                 </div>
             </div>
