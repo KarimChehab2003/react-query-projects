@@ -1,11 +1,6 @@
 import { keepPreviousData, useQuery } from "@tanstack/react-query";
 import { useState } from "react";
-interface Post {
-    userId: number;
-    id: number;
-    title: string;
-    body: string
-}
+import type { Post } from "../types/PaginatedPostsViewerTypes";
 
 function PaginatedPostsViewer() {
     const [page, setPage] = useState<number>(1);

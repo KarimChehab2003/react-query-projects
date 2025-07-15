@@ -18,6 +18,9 @@ function Layout() {
                     <NavLink to={"/currency-converter"} className={({ isActive }) => isActive
                         ? "block px-4 py-2 bg-[#2A9D8F] rounded transition-colors duration-200"
                         : "block px-4 py-2 hover:bg-[#2A9D8F]/60 rounded"}>Currency Converter</NavLink>
+                    <NavLink to={"/comments-viewer"} className={({ isActive }) => isActive
+                        ? "block px-4 py-2 bg-[#2A9D8F] rounded transition-colors duration-200"
+                        : "block px-4 py-2 hover:bg-[#2A9D8F]/60 rounded"}>Comments Viewer</NavLink>
                 </nav>
             </aside>
 

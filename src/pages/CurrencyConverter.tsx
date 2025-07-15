@@ -3,20 +3,8 @@ import { useState } from "react";
 import { FaArrowRight } from "react-icons/fa6";
 import { IoIosWarning } from "react-icons/io";
 import { RiArrowUpDownLine } from "react-icons/ri";
+import type { ConversionResponse, ExchangeRateResponse } from "../types/CurrencyConverterTypes";
 
-interface ExchangeRateResponse {
-    conversion_rates: {
-        [currencyCode: string]: number;
-    }
-}
-
-interface ConversionResponse {
-    time_last_update_utc: string;
-    base_code: string;
-    target_code: string;
-    conversion_rate: number;
-    conversion_result: number
-}
 
 function CurrencyConverter() {
     const [fromCurrencyCode, setFromCurrencyCode] = useState<string>("");

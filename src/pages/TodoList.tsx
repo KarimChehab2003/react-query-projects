@@ -2,12 +2,7 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useState } from "react";
 import { FaClipboardList } from "react-icons/fa6";
 import TodoCard from "../components/TodoCard";
-
-export interface Todo {
-    id: number;
-    title: string;
-    completed: boolean;
-}
+import type { Todo } from "../types/TodoListTypes";
 
 function TodoList() {
     const [newTodoTitle, setNewTodoTitle] = useState<string>("");
