@@ -1,7 +1,7 @@
 import { useState } from "react";
-import type { Todo } from "../pages/TodoList";
 import { FaTrash } from "react-icons/fa6";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
+import type { Todo } from "../types/TodoListTypes";
 
 function TodoCard({ id, title, completed }: Todo) {
     const [isCompleted, toggleCompleted] = useState<boolean>(completed);
