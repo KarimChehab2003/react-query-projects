@@ -10,7 +10,7 @@ function PostCard(post: Post) {
     }
 
     const getComments = async () => {
-        const res = await fetch(`http://jsonplaceholder.typicode.com/comments?_limit=50&postId=${post.id}`);
+        const res = await fetch(`https://jsonplaceholder.typicode.com/comments?_limit=50&postId=${post.id}`);
         if (!res.ok) throw new Error("Could not fetch comments");
         const data: Comment[] = await res.json();
         return data;
