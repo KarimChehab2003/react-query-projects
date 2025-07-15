@@ -16,11 +16,8 @@ function CommentsViewer() {
         queryFn: getPosts
     })
 
-    if (isLoading) return <div className="w-8 h-8 border-4 border-indigo-500 border-b-transparent animate-spin"></div>
-
-
     return (
-        <section className="min-h-screen flex justify-center bg-[#f0f4f8]">
+        <section className="min-h-screen flex justify-center items-center bg-[#f0f4f8]">
             {
                 (isLoading || isError || posts) && (
                     <div className="max-w-4xl w-full flex flex-col items-center p-8">
