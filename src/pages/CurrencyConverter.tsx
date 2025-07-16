@@ -57,7 +57,7 @@ function CurrencyConverter() {
 
 
     return (
-        <section className="min-h-screen flex justify-center items-center bg-gradient-to-br from-[#667eea] to-[#764ba2] poppins">
+        <section className="min-h-screen flex justify-center items-center bg-gradient-to-br from-[#667eea] to-[#764ba2] poppins p-4">
             {
                 isLoading || isError || defaultCurrencies && (
                     <>
@@ -80,8 +80,8 @@ function CurrencyConverter() {
                             <form className="bg-white/80 flex flex-col p-8 rounded-lg text-[#333 max-w-lg w-full space-y-6" onSubmit={handleSubmit}>
                                 <h1 className="text-4xl font-bold capitalize text-center">currency converter</h1>
 
-                                <div className="flex justify-between items-center space-x-4 w-full">
-                                    <div className="flex flex-col grow">
+                                <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 space-x-4 w-full">
+                                    <div className="flex w-full flex-col grow">
                                         <label className="font-medium" htmlFor="fromInput" >From</label>
                                         <select className="bg-white rounded px-3 py-2 shadow-md" id="fromInput" onChange={(e) => setFromCurrencyCode(e.target.value)} required>
                                             <option value={""} hidden>Select currency</option>
@@ -97,7 +97,7 @@ function CurrencyConverter() {
                                         <RiArrowUpDownLine className="text-blue-500 text-2xl" />
                                     </div>
 
-                                    <div className="flex flex-col grow">
+                                    <div className="flex w-full flex-col grow">
                                         <label className="font-medium" htmlFor="toInput" >To</label>
                                         <select className="bg-white rounded px-3 py-2 shadow-md" id="toInput" onChange={(e) => setToCurrencyCode(e.target.value)} required>
                                             <option value={""} hidden>Select currency</option>

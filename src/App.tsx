@@ -5,6 +5,7 @@ import PaginatedPostsViewer from "./pages/PaginatedPostsViewer";
 import TodoList from "./pages/TodoList";
 import CurrencyConverter from "./pages/CurrencyConverter";
 import CommentsViewer from "./pages/CommentsViewer";
+import FeedbackBoard from "./pages/FeedbackBoard";
 
 function App() {
     return (
@@ -16,6 +17,7 @@ function App() {
                     <Route path="todo-list" element={<TodoList />} />
                     <Route path="currency-converter" element={<CurrencyConverter />} />
                     <Route path="comments-viewer" element={<CommentsViewer />} />
+                    <Route path="feedback-board" element={<FeedbackBoard />} />
                 </Route>
             </Routes>
         </Router>

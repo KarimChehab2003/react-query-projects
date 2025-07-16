@@ -26,11 +26,11 @@ function PaginatedPostsViewer() {
     if (isError) return <div>An error occurred... {error.message}</div>
 
     return (
-        <section className="min-h-screen flex justify-center items-center bg-gradient-to-r from-purple-50 to-blue-100 p-16">
+        <section className="min-h-screen flex justify-center items-center bg-gradient-to-r from-purple-50 to-blue-100 p-4 md:p-16">
             <div className="max-w-4xl w-full flex flex-col items-center space-y-8">
                 <div className="flex flex-col items-center space-y-1">
                     <h1 className="text-4xl font-bold text-purple-800">Posts Collection</h1>
-                    <p className="text-gray-700 text-lg">Browse through our collection of interesting posts</p>
+                    <p className="text-gray-700 text-lg text-center">Browse through our collection of interesting posts</p>
                 </div>
                 <div className="flex flex-col items-center bg-white rounded-xl shadow-lg p-4 space-y-4">
                     <div className="grid grid-cols-1 h-[60vh] overflow-auto">

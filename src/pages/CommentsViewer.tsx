@@ -20,7 +20,7 @@ function CommentsViewer() {
         <section className="min-h-screen flex justify-center items-center bg-[#f0f4f8]">
             {
                 (isLoading || isError || posts) && (
-                    <div className="max-w-4xl w-full flex flex-col items-center p-8">
+                    <div className="max-w-4xl w-full flex flex-col items-center p-4 md:p-8">
                         {isLoading && (
                             <div className="w-8 h-8 rounded-full border-4 border-indigo-500 border-b-transparent animate-spin"></div>
                         )}
@@ -33,7 +33,7 @@ function CommentsViewer() {
 
                         {posts && (
                             <>
-                                <h1 className="text-4xl text-indigo-800 font-bold mb-2 capitalize">community discussions</h1>
+                                <h1 className="text-4xl text-indigo-800 font-bold mb-2 capitalize text-center">community discussions</h1>
                                 <p className="text-lg text-gray-600 font-medium mb-4">Select a post to view comments</p>
                                 <div className="grid-cols-1">
                                     {
