@@ -6,7 +6,8 @@ import type { Todo } from "../types/TodoListTypes";
 function TodoCard({ id, title, completed }: Todo) {
     const [isCompleted, toggleCompleted] = useState<boolean>(completed);
     const queryClient = useQueryClient();
-    const baseURL = import.meta.env.VITE_MOCKAPI_BASE_URL;
+    const baseURL = import.meta.env.VITE_MOCKAPI_BASE_URL; // updated
+
     const updateTodo = async (newCompleted: boolean) => {
         const res = await fetch(`${baseURL}/${id}`, {
             method: "PUT",
