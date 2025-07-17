@@ -8,22 +8,22 @@ function Layout() {
                 <nav className="space-y-2">
                     <NavLink to="/" end className={({ isActive }) => isActive
                         ? "block px-4 py-2 bg-[#2A9D8F] rounded transition-colors duration-200"
-                        : "block px-4 py-2 hover:bg-[#2A9D8F]/60 rounded"}>GitHub User Explorer</NavLink>
+                        : "block px-4 py-2 hover:bg-[#2A9D8F]/60 rounded"}>GitHub User Explorer  (useQuery & dependent Queries)</NavLink>
                     <NavLink to={"/post-viewer"} className={({ isActive }) => isActive
                         ? "block px-4 py-2 bg-[#2A9D8F] rounded transition-colors duration-200"
-                        : "block px-4 py-2 hover:bg-[#2A9D8F]/60 rounded"}>Paginated Posts Viewer</NavLink>
+                        : "block px-4 py-2 hover:bg-[#2A9D8F]/60 rounded"}>Paginated Posts Viewer  (Pagination)</NavLink>
                     <NavLink to={"/todo-list"} className={({ isActive }) => isActive
                         ? "block px-4 py-2 bg-[#2A9D8F] rounded transition-colors duration-200"
-                        : "block px-4 py-2 hover:bg-[#2A9D8F]/60 rounded"}>TodoList w/ Add & Delete</NavLink>
+                        : "block px-4 py-2 hover:bg-[#2A9D8F]/60 rounded"}>TodoList w/ Add & Delete  (useMutation)</NavLink>
                     <NavLink to={"/currency-converter"} className={({ isActive }) => isActive
                         ? "block px-4 py-2 bg-[#2A9D8F] rounded transition-colors duration-200"
-                        : "block px-4 py-2 hover:bg-[#2A9D8F]/60 rounded"}>Currency Converter</NavLink>
+                        : "block px-4 py-2 hover:bg-[#2A9D8F]/60 rounded"}>Currency Converter  (useQuery & useMutation)</NavLink>
                     <NavLink to={"/comments-viewer"} className={({ isActive }) => isActive
                         ? "block px-4 py-2 bg-[#2A9D8F] rounded transition-colors duration-200"
-                        : "block px-4 py-2 hover:bg-[#2A9D8F]/60 rounded"}>Comments Viewer</NavLink>
+                        : "block px-4 py-2 hover:bg-[#2A9D8F]/60 rounded"}>Comments Viewer  (dependent Queries)</NavLink>
                     <NavLink to={"/feedback-board"} className={({ isActive }) => isActive
                         ? "block px-4 py-2 bg-[#2A9D8F] rounded transition-colors duration-200"
-                        : "block px-4 py-2 hover:bg-[#2A9D8F]/60 rounded"}>Feedback Board</NavLink>
+                        : "block px-4 py-2 hover:bg-[#2A9D8F]/60 rounded"}>Feedback Board (useQuery & useMutation)</NavLink>
                 </nav>
             </aside>
 
